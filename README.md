@@ -8,7 +8,7 @@
 
 
 [![license: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://shields.io/)
-[![version: 1.2.0](https://img.shields.io/badge/version-1.2.0-default.svg)](https://shields.io/)
+[![version: 1.3.0](https://img.shields.io/badge/version-1.3.0-default.svg)](https://shields.io/)
 [![platforms: macos,linux,windows](https://img.shields.io/badge/platforms-macos%20|%20linux%20|%20windows-orange.svg)](https://shields.io/)
 [![goreportcard](https://goreportcard.com/badge/github.com/DarkDrim/go-test-report)](https://goreportcard.com/report/github.com/DarkDrim/go-test-report)
 

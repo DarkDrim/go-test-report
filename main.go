@@ -114,6 +114,7 @@ type (
 func main() {
 	rootCmd, _, _ := initRootCommand()
 	if err := rootCmd.Execute(); err != nil {
+		fmt.Printf("failed to execute: %s", err)
 		os.Exit(1)
 	}
 }
