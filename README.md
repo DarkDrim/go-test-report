@@ -21,8 +21,9 @@
 The original version of the library has not been supported for more than three years.
 
 This version has some improvements:
-- support for the latest version of Golang
-- ability to split groups by package (instead of splitting by number of tests)
+- support latest version of Golang (using embed feature)
+- ability to split groups by package (instead of splitting by number of tests) (-p option)
+- ability to read test results from file (-i option)
 
 ## Installation
 
@@ -103,6 +104,7 @@ Available Commands:
 Flags:
   -g, --groupSize int   the number of tests per test group indicator (default 20)
   -h, --help            help for go-test-report
+  -i, --input string the JSON input file
   -o, --output string   the HTML output file (default "test_report.html")
   -s, --size string     the size (in pixels) of the clickable indicator for test result groups (default "24")
   -t, --title string    the title text shown in the test report (default "go-test-report")

@@ -1,5 +1,6 @@
-#FROM alpine
-FROM golang:1.14-alpine
+ARG GO_VERSION=1.21.5
+
+FROM golang:${GO_VERSION}-alpine
 
 # installs GCC, libc-dev, etc
 RUN apk add build-base

@@ -7,9 +7,15 @@ LIN_DIR := release_builds/linux-amd64/
 MAC_DIR := release_builds/darwin-amd64/
 WIN_DIR := release_builds/windows-amd64/
 
+GO_VERSION = 1.21.5
+
 .PHONY: help
 help: ## List of available commands
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
+
+.PHONY: go-version
+go-version: ## Print Golang version
+	@echo "$(GO_VERSION)"
 
 genbuild:
 	go build
@@ -41,7 +47,7 @@ buildall: genbuild
 	echo "...Done!"
 
 dockertest: genbuild
-	docker build . -t go-test-report-test-runner:$(VERSION)
+	docker build --build-arg GO_VERSION=$(GO_VERSION) . -t go-test-report-test-runner:$(VERSION)
 
 .PHONY: lint
 lint: ## Run linter (https://github.com/golangci/golangci-lint/releases)
