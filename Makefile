@@ -11,11 +11,8 @@ WIN_DIR := release_builds/windows-amd64/
 help: ## List of available commands
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
-genbuild: gencode
+genbuild:
 	go build
-
-gencode:
-	(cd embed_assets/;set -e;go build;./embed_assets)
 
 buildall: genbuild
 	echo "Building..."

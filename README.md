@@ -8,7 +8,7 @@
 
 
 [![license: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://shields.io/)
-[![version: 1.3.0](https://img.shields.io/badge/version-1.3.0-default.svg)](https://shields.io/)
+[![version: 1.4.0](https://img.shields.io/badge/version-1.4.0-default.svg)](https://shields.io/)
 [![platforms: macos,linux,windows](https://img.shields.io/badge/platforms-macos%20|%20linux%20|%20windows-orange.svg)](https://shields.io/)
 [![goreportcard](https://goreportcard.com/badge/github.com/DarkDrim/go-test-report)](https://goreportcard.com/report/github.com/DarkDrim/go-test-report)
 
@@ -32,7 +32,7 @@ Install the go binary using `go get`.
 
 
 ```shell
-$ go get -u github.com/DarkDrim/go-test-report/
+$ go install github.com/DarkDrim/go-test-report@latest
 ```
 
 ## Usage
@@ -165,14 +165,6 @@ To build `go-test-report` from source.
 ```bash
 $ gmake genbuild
 ```
-
-Because `go-test-report` embeds the HTML and Javascript code necessary to generate the report output file, a command to generate the embedded go code is needed. 
-
-```bash
-$ gmake gencode
-```
-> Alternatively, `make genbuild` can be used which automatically runs `gencode` _before_ `genbuild`
-
 
 To build the testing container _(This is the same docker image used during build automation)_:
 
