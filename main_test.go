@@ -375,8 +375,7 @@ func TestParseSizeFlagIfValueIsNotInteger(t *testing.T) {
 	}
 	err := parseSizeFlag(tmplData, flags)
 	assertions.Error(err)
-	assertions.Equal(err.Error(), `strconv.Atoi: parsing "": invalid syntax`)
-
+	assertions.Equal(err.Error(), `failed to split sizeFlag: strconv.Atoi: parsing "": invalid syntax`)
 }
 
 func TestParseSizeFlagIfWidthValueIsNotInteger(t *testing.T) {
@@ -387,7 +386,7 @@ func TestParseSizeFlagIfWidthValueIsNotInteger(t *testing.T) {
 	}
 	err := parseSizeFlag(tmplData, flags)
 	assertions.Error(err)
-	assertions.Equal(err.Error(), `strconv.Atoi: parsing "b": invalid syntax`)
+	assertions.Equal(err.Error(), `failed to split sizeFlag: strconv.Atoi: parsing "b": invalid syntax`)
 }
 
 func TestParseSizeFlagIfHeightValueIsNotInteger(t *testing.T) {
@@ -398,7 +397,7 @@ func TestParseSizeFlagIfHeightValueIsNotInteger(t *testing.T) {
 	}
 	err := parseSizeFlag(tmplData, flags)
 	assertions.Error(err)
-	assertions.Equal(err.Error(), `strconv.Atoi: parsing "a": invalid syntax`)
+	assertions.Equal(err.Error(), `failed to convert sizeFlag second value to int: strconv.Atoi: parsing "a": invalid syntax`)
 }
 
 func TestParseSizeFlagIfMalformedSize(t *testing.T) {

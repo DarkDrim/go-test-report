@@ -20,10 +20,13 @@
 
 The original version of the library has not been supported for more than three years.
 
-This version has some improvements:
+**This version has some improvements:**
+
 - support latest version of Golang (using embed feature)
 - ability to split groups by package (instead of splitting by number of tests) (-p option)
 - ability to read test results from file (-i option)
+- additional logging: errors with additional context are now printed to stdout
+- ❗️support build tags (original version does not support build tags and returns an error: exit status 1) (-b option)
 
 ## Installation
 
@@ -102,13 +105,14 @@ Available Commands:
   version     Prints the version number of go-test-report
 
 Flags:
-  -g, --groupSize int   the number of tests per test group indicator (default 20)
-  -h, --help            help for go-test-report
-  -i, --input string the JSON input file
-  -o, --output string   the HTML output file (default "test_report.html")
-  -s, --size string     the size (in pixels) of the clickable indicator for test result groups (default "24")
-  -t, --title string    the title text shown in the test report (default "go-test-report")
-  -v, --verbose         while processing, show the complete output from go test
+  -g,  --groupSize int     the number of tests per test group indicator (default 20)
+  -h,  --help              help for go-test-report
+  -i,  --input string      the JSON input file
+  -o,  --output string     the HTML output file (default "test_report.html")
+  -b, --build-tags string the golang build tags (if all tests files contains build tag - this option is mandatory)      
+  -s,  --size string       the size (in pixels) of the clickable indicator for test result groups (default "24")
+  -t,  --title string      the title text shown in the test report (default "go-test-report")
+  -v,  --verbose           while processing, show the complete output from go test
 
 Use "go-test-report [command] --help" for more information about a command.
 ```
