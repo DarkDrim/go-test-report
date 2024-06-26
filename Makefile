@@ -7,7 +7,7 @@ LIN_DIR := release_builds/linux-amd64/
 MAC_DIR := release_builds/darwin-amd64/
 WIN_DIR := release_builds/windows-amd64/
 
-GO_VERSION = 1.21.5
+GO_VERSION = 1.22.4
 
 .PHONY: help
 help: ## List of available commands

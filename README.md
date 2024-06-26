@@ -27,6 +27,7 @@ The original version of the library has not been supported for more than three y
 - ability to read test results from file (-i option)
 - additional logging: errors with additional context are now printed to stdout
 - ❗️support build tags (original version does not support build tags and returns an error: exit status 1) (-b option)
+- skip [testify Suite](https://github.com/stretchr/testify?tab=readme-ov-file#suite-package) in results
 
 ## Installation
 
