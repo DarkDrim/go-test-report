@@ -505,6 +505,10 @@ func generateReport(tmplData *templateData, allTests map[string]*testStatus, tes
 	}
 	for _, test := range tests {
 		status := allTests[test.key]
+		if strings.HasSuffix(status.TestName, "TestSuite") {
+			continue // skip testify Suite
+		}
+
 		if tmplData.groupTestsByPackage {
 			if tgPackage != "" && status.Package != tgPackage {
 				tgID++
